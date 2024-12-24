@@ -1,0 +1,15 @@
+.activate{
+    background-color: #dc003e;
+}
+.activate>svg>path{
+    stroke: #fff;
+}
+.activate-carrito{
+    background-color: #dc003e;
+}
+.activate-carrito>svg>path{
+    fill: #fff;
+}
+.progress{
+    border: 4px solid #dc003e;
+}

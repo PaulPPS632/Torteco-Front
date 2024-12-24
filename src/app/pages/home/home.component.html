@@ -1,0 +1,58 @@
+
+<div class="pt-28 md:pt-20">
+    <div class="w-full">
+        <img class="w-full object-contain" src="banner.jpg" alt="banner principal">
+    </div>
+    <div class="flex flex-row items-center justify-evenly bg-rojo h-fit md:h-96 p-4">
+        <div class="flex flex-col text-rosa gap-5 md:gap-10">
+            <h1 class="font-bold text-2xl md:text-5xl">
+                Las mejores tortas para ti
+            </h1>
+            <p class="text-sm">
+                vive celebra y comparte
+            </p>
+        </div>
+        <div class="w-48 md:w-fit h-full">
+            <img class="h-full object-contain" src="TortaPortada.png" alt="Imgaen de una torta">
+        </div>
+    </div>
+    <div class="flex flex-row flex-wrap items-center justify-evenly gap-10 h-fit my-10">
+        <div class="w-96 flex flex-col items-center md:items-start justify-center gap-2">
+            <h2 class="text-marron text-2xl font-bold">Servicios</h2>
+            <p class="w-11/12">
+                Contamos con una moderna planta de producción, así como cinco pastelerías Torteco donde atendemos a nuestros distinguidos clientes de forma directa o a través de nuestro servicio de Delivery o nuestra renovada página web.  Todo ello con un equipo de profesionales debidamente capacitados así como maquinaria de alta tecnología para ofrecer un producto y servicio con la calidad que nuestros clientes se merecen.
+            </p>
+        </div>
+        
+        <div class="w-96 h-96 grid grid-cols-7 grid-rows-7 bg-marron">
+            <div class="w-full h-full col-start-2 row-start-1 col-span-3 row-span-3 flex items-center justify-center">
+                <img class="h-full object-cover" src="TortaPortada.png" alt="Imgaen de una torta">
+            </div>
+            <div class="w-full h-full row-start-2 col-span-3 row-span-3 flex items-center justify-center">
+                <img class="h-full object-contain" src="TortaPortada2.png" alt="Imgaen de una torta">
+            </div>
+            <div class="w-full h-full row-start-4 col-start-1 col-span-3 row-span-3 flex items-center justify-center">
+                <img class="h-full object-contain" src="TortaPortada3.png" alt="Imgaen de una torta">
+            </div>
+            <div class="w-full h-full row-start-5 col-span-3 row-span-3 flex items-center justify-center">
+                <img class="h-full object-contain" src="TortaPortada4.png" alt="Imgaen de una torta">
+            </div>
+        </div>
+    </div>
+    @for (category of categories; track $index) {
+        @if (category.products != null) {
+            <div class="w-full my-10">
+                <div class="relative w-full flex items-center justify-center my-20">
+                    <h3 class="absolute text-4xl font-bold text-marron bg-base px-2">{{category.name}}</h3>
+                    <div class="h-1 w-11/12 md:w-full border border-y-2 border-x-0 border-y-marron"></div>
+                </div>
+                
+                <div class="flex flex-row flex-wrap gap-4 items-start justify-center">
+                    @for (product of category.products; track $index) {
+                        <app-card-product [product]="product"/>
+                    }
+                </div>
+            </div>
+        }
+    }
+</div>

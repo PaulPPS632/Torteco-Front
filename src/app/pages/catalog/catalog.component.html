@@ -1,0 +1,43 @@
+<section class="w-full py-32 flex flex-row items-center justify-center">
+  <div class="flex flex-col items-center justify-center w-52 gap-4">
+    
+    <label class="inline-flex items-center cursor-pointer gap-2">
+        <span class="text-lg font-medium text-marron">ASC</span>
+      <input
+        type="checkbox"
+        [value]="sort"
+        class="sr-only peer"
+        (change)="ChangeSort()"
+      />
+      <div
+        class="relative w-11 h-6 bg-base2 peer-focus:outline-none peer-focus:ring-4 peer-focus:ring-marron dark:peer-focus:ring-marron rounded-full peer peer-checked:after:translate-x-full rtl:peer-checked:after:-translate-x-full peer-checked:after:border-marron after:content-[''] after:absolute after:top-[2px] after:start-[2px] after:bg-marron after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all dark:border-base peer-checked:bg-base"
+      ></div>
+      
+      <span class="text-lg font-medium text-marron">DESC</span>
+    </label>
+    <p class="text-marron text-xl">Categorias</p>
+    <ul class="flex flex-col items-start justify-center ">
+      @for (category of categories; track $index) {
+        <li class="cursor-pointer text-marron font-bold border border-marron py-2 px-2 w-28">
+            <label>
+              <input 
+                type="radio" 
+                name="category" 
+                value="{{ category.id }}" 
+                (change)="onCategorySelect(category.slug)" 
+                class="hidden peer"
+              />
+              <span class="cursor-pointer text-marron font-bold peer-checked:underline">
+                {{ category.name }}
+              </span>
+            </label>
+        </li>
+      }
+    </ul>
+  </div>
+  <div class="w-full flex flex-wrap items-start justify-center gap-4">
+    @for (product of products; track $index) {
+    <app-card-product [product]="product" />
+    }
+  </div>
+</section>

@@ -1,0 +1,8 @@
+export const environment = {
+    //API_URL: 'https://technetsac.com/api',
+    //API_URL: 'http://localhost:1337',
+    API_URL: 'https://worthy-horses-72d3ad3c9d.strapiapp.com',
+    //TOKEN: '1135034f810b95692aa61f4612136ca6dc68caf2e9ccf48e8aba15c3cdce16cb11d7204f77fd055c16aa01a5867df0b93c5ab8a75b3338fc827910aa8fbb56a6e5288807394ea18ed9d3ca9adb85e37a31e0b8bf767f6d7857afd43def2994e10c2e29488fc7d3aa3cd231191fe132c28581295055d7766d5b4915ef65e98acb'
+    TOKEN: 'c83210356a86b74bd4b5c66c62eddf0ef2957d9715e716f425ffb2b5efca06af6c9172f97fcfb5bf2594b73a401c0b157fe5a3bf084d75476158833dbc3c041ecc09d066b44737a50a1b72e0cf6fa76b37ceb7df3c2ce94cfc5830008c18757a5315e4c540b4c7d428556d5616852ae80b6670dee5d77486664b37e24a400a1c'
+  };
+  

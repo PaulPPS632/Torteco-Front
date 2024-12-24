@@ -1,0 +1,103 @@
+<section class="pt-32 bg-white md:py-32 ">
+    <div class="max-w-screen-xl px-4 mx-auto 2xl:px-0">
+      <div class="lg:grid lg:grid-cols-2 lg:gap-8 xl:gap-16">
+        <div class="shrink-0 max-w-md lg:max-w-lg mx-auto">
+          <!-- <p
+            class="text-sm font-medium leading-none text-gray-500 dark:text-gray-400"
+          >
+            Imagen Referencial *
+          </p> -->
+          <div
+            class="w-full h-full image-container"
+            (mousemove)="zoomImage($event)"
+            (mouseleave)="resetZoom()"
+          >
+            <img
+              class="w-full product-image"
+              [src]="imagenes[0]"
+              alt="IMAGEN PRODUCTO"
+              #imageRef
+            />
+            @if (isZoomActive) {
+              <div class="zoom-area" [ngStyle]="zoomStyle"></div>
+            }
+          </div>
+  
+          <div class="flex gap-3">
+            <div class="flex flex-row gap-2">
+              @for (item of imagenes; track $index) {
+                <div class="w-16 shadow-md">
+                  <img
+                    [src]="item"
+                    class="w-full object-cover cursor-pointer"
+                    alt="imagen"
+                    (click)="mostrarimg($event)"
+                    (keyup.enter)="mostrarimg($event)"
+                    tabindex="0"
+                  />
+                </div>
+              }
+            </div>
+          </div>
+        </div>
+  
+        <div class="mt-6 sm:mt-8 lg:mt-0">
+          <h1
+            class="text-3xl font-bold text-marron sm:text-2xl "
+          >
+            {{ product?.name }}
+          </h1>
+          <div class="flex flex-row flex-nowrap justify-between mt-5">
+            <div class="flex flex-col flex-nowrap justify-between gap-2">
+                <button
+                (click)="addToCart()"
+                (keyup.enter)="addToCart()"
+                title=""
+                class="h-11 w-fit inline-flex items-center rounded-lg bg-rojo px-5 py-2 text-sm font-medium text-white hover:bg-rojo-oscuro "
+                role="button"
+                tabindex="0"
+              >
+                <svg
+                  class="w-5 h-5 -ms-2 me-2"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="24"
+                  height="24"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                >
+                  <path
+                    stroke="currentColor"
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"
+                  />
+                </svg>
+                <span>Añadir al carrito</span>
+              </button>
+            </div>
+            <div>
+              <div class="flex flex-col flex-nowrap my-2">
+                <p
+                  class="text-sm font-medium leading-none text-marron"
+                >
+                  Cualquier metodo de pago
+                </p>
+                <p
+                  class="text-2xl font-extrabold text-marron sm:text-3xl "
+                >
+                  {{ product?.price | currency: "S/. " }} 
+                </p>
+              </div>
+            </div>
+          </div>
+  
+          <hr class="my-6 md:my-8 border-marron" />
+  
+          <div class="text-marron font-bold">{{product?.description}}</div>
+        </div>
+      </div>
+    </div>
+  </section>
+  

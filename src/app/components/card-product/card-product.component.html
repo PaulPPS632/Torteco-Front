@@ -1,0 +1,19 @@
+<div class="w-40 h-60 md:w-56 md:h-80 flex flex-col items-center justify-center p-2 gap-2 bg-base2 text-marron rounded-md cursor-pointer hover:scale-105 transition-all">
+    <div class="h-24 md:h-36" [routerLink]="['/product', product?.slug]">
+        <img class="h-full object-contain rounded-md" [src]="product!.images[0].url" alt="imagen de producto">
+    </div>
+    <div class="w-full flex flex-col items-start justify-center gap-2">
+        <p class="text-lg md:text-xl font-bold hover:underline" [routerLink]="['/product', product?.slug]">{{product?.name}}</p>
+        <p class="md:text-lg font-semibold">S/{{product?.price}}</p>
+    </div>
+    <div>
+        <button class="bg-rojo py-2 px-4 text-white rounded-md hover:bg-rojo-oscuro hover:scale-105 transition-all flex flex-row items-center justify-center gap-2 text-sm" type="button"
+        (click)="Agregar()"
+        >
+            <svg class="w-4 h-4 md:w-6 md:h-6 text-white" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+                <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 4h1.5L8 16m0 0h8m-8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm8 0a2 2 0 1 0 0 4 2 2 0 0 0 0-4Zm.75-3H7.5M11 7H6.312M17 4v6m-3-3h6"/>
+              </svg>
+              
+            Agregar</button>
+    </div>
+</div>
