@@ -33,6 +33,7 @@ export class HeaderComponent implements OnInit{
       page: 1,
       search: currentSearch
     };
+    this.isMenuOpen = false;
     this.router.navigate(['catalog'], {
       //relativeTo: this.route,
       queryParams: queryParams,

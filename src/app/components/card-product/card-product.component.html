@@ -1,9 +1,9 @@
-<div class="w-40 h-60 md:w-56 md:h-80 flex flex-col items-center justify-center p-2 gap-2 bg-base2 text-marron rounded-md cursor-pointer hover:scale-105 transition-all">
+<div class="w-40 h-64 md:w-56 md:h-80 flex flex-col items-center justify-center p-2 gap-2 bg-base2 text-marron rounded-md cursor-pointer hover:scale-105 transition-all">
     <div class="h-24 md:h-36" [routerLink]="['/product', product?.slug]">
         <img class="h-full object-contain rounded-md" [src]="product!.images[0].url" alt="imagen de producto">
     </div>
-    <div class="w-full flex flex-col items-start justify-center gap-2">
-        <p class="text-lg md:text-xl font-bold hover:underline" [routerLink]="['/product', product?.slug]">{{product?.name}}</p>
+    <div class="w-full h-20 flex flex-col items-start justify-center gap-2">
+        <p class="text-sm md:text-xl font-bold hover:underline" [routerLink]="['/product', product?.slug]">{{product?.name}}</p>
         <p class="md:text-lg font-semibold">S/{{product?.price}}</p>
     </div>
     <div>

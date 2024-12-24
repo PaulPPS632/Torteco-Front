@@ -1,4 +1,4 @@
-GET http://localhost:1337/api/products?filters[category][slug][$contains]=Tortas&populate=images
+GET http://localhost:1337/api/products?filters[category][slug][$contains]=Tortas&populate=*
 Authorization: Bearer 1135034f810b95692aa61f4612136ca6dc68caf2e9ccf48e8aba15c3cdce16cb11d7204f77fd055c16aa01a5867df0b93c5ab8a75b3338fc827910aa8fbb56a6e5288807394ea18ed9d3ca9adb85e37a31e0b8bf767f6d7857afd43def2994e10c2e29488fc7d3aa3cd231191fe132c28581295055d7766d5b4915ef65e98acb
 ###
 GET http://localhost:1337/api/products?filters[category][slug][$contains]=Tortas&filters[name][$contains]=product&populate=images

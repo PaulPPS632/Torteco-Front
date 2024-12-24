@@ -25,7 +25,7 @@ export class CartItemComponent implements OnInit{
       // Si product tiene un campo de imágenes, mapear las URLs
       this.imagen = this.CartState.product.images.map((imagen) => {
         // Asegúrate de que cada imagen tenga una URL completa
-        return `${this.apiUrl}${imagen.url}`;
+        return `imagen.url`;
       })[0];
     }
   }
