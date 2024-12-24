@@ -34,7 +34,7 @@ export class ProductComponent implements OnInit {
       console.log(this.product);
       this.imagenes = this.product!.images.map((imagen) => {
         // Asegúrate de que cada imagen tenga una URL completa
-        return `${this.apiUrl}${imagen.url}`;
+        return imagen.url;
       });
     })
   }
